@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 12.5s linear infinite;
+}
+
+@keyframes logo-appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes logo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes logo-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+.animate-logo-appear {
+  animation: logo-appear 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-logo-float {
+  animation: logo-float 3s ease-in-out infinite;
+}
+
+.animate-logo-glow {
+  animation: logo-glow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar Styles */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar {
+  position: relative;
+  overflow-y: auto;
+}
+
+.custom-scrollbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 4px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 4px;
+  height: 20%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  z-index: 1;
+  transition: transform 0.3s ease-out;
+}
+
+.custom-scrollbar:hover::before {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
